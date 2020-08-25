@@ -17,6 +17,7 @@ env:
     - secure: nAXlplywj93/3OaRQz31CBkaw7CjTYQcYmpneBdfek9YRUgvSTs9DhuBFe+nb2qQSbodTu2HLsNc5POv970Qlrb5CdWr0ZXR/N+R9JSp1ToF/fjCffbtLPHAN01ZjA4+pmvZnoKtOgeDvw1UMZxqsx4SIPymdRjHtN+RTHCoarPM9L7ieNFhTuYSRcDuPd3YyQi8qJjANSylCBFWBW6v6dRhO+jLdjc/leUbSzUWfv0lzYzeQG75M+P/WXrKVw8lbg0poAsguaud3kRLIFPZde+PJASugYvKqw4SNmaXclCJI4iETcMNSCnz6IjHT7A2zOHg41QR4UmB49MG+V0G/vlmUDT7C43LIxR5vKgKYrUbZm3LASN3muS3JTGwiJ9xsbaqzSpbzSBo9GD24OjK2kRebV0RfwtPFUp8RDs5sya1UCSqYLamTdlTK4vdiC8E6cxrXLIzTq0bmMHf8aSOic95EnNxTf5kpJ3EOUkcL9ukVjbUusrPVCPkNI4rIknj4cAhhOFUWsjFujNAkyoUyQDCn9SlcQs3XLsxUcIvwhlQWDBkVe5+2WvfrE5L3oz0MD9cf+f6g4Qsmd/KRsV2xttnnFIqy/euHmo8m8jloVLAzPnMuPrL/H9qjCy1BRhYvPZoxBMn1GcGdVOazFdxg5+EBwfEASwDHUPf4TNhXqs=
 
 after_success:
+  - export COMMIT=${TRAVIS_COMMIT::7}
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker-compose build
   - docker push marciojusto/sgi-extranet-app
