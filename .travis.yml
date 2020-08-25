@@ -18,7 +18,7 @@ env:
 
 after_success:
   - export COMMIT=${TRAVIS_COMMIT::7}
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login -u marciojusto -p S021180#j
   - docker-compose build
   - docker push marciojusto/sgi-extranet-app
 
