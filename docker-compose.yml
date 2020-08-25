@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    image: marciojusto/sgi-extranet-app:latest
+    container_name: sgi-extranet-app
+    ports:
+    - 8080:8080
