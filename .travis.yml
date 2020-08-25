@@ -1,34 +1,11 @@
 language: java
 jdk:
 - openjdk14
-services:
-- docker
-
-# env:
-#   global:
-#     secure: DOCKER_USER
-#     secure: DOCKER_PASS
-#     secure: IMAGE_NAME
-#     secure: TEAMS_CHANNEL_URL
-
-env:
-  global:
-    - secure: pmOb6IO7n+KOT0w6fGz/hfYOWaB9fmftlNuQq4bb4zzb0BZEY4/7X6BtrquWLsfhrSi4z/+s4DvRL1hDwQmzbKITiVqPPRN6wcWK9VwWAfhvcIiMVnazUmQQx0enaj4nsdJrSHgIqnHGYnJex6Ppqac2X4m8WkRNvV0Jjjz81r8pkxlRXq5/0Ni8qbkoLbP25pT1BwLYlPC2yoFaUAW/04g0sZ9nQc7AWKEwLeaNzQooO5iY8Nr1apXWDTkmjSIILJYOQXlbR5bJtrwpJl4zXcZdJhi4OgiiiRulKDMGVRJEJfQlVAvuOBJba4BSvvADrvS4XPn1FBsixigBprFmzp4E630L+wt8VmDbgKbX6b8OnwBMufx6VAzMuCx7DIvKUnHVot0DPTfD8XMF3UaTcfRo9Lgc55NKb1Ai9+fnxTwwm3s7hn4WAs464OvOc3a3KNyjyF28chalWNuc7YT19RHn4B5iAvJaM32LvWlJyDs6q8K2XPcmqZTMh1u2ASaPL8fwcLinZhrIbS7wfzNsX20ogf/K1V3qYZJzI8rm2SjFGv4knhdzJvnBPtC8sHUgz6SoU5ksUGS7SCiRCDeNvjEo2JDIoZ3BIshnP0KAFplNV1XwV7sjvfwfEuVyKius9bdbw58XkkzOY9krioCkYQJtS9QcJnbARQl81345gAw=
-    - secure: nAXlplywj93/3OaRQz31CBkaw7CjTYQcYmpneBdfek9YRUgvSTs9DhuBFe+nb2qQSbodTu2HLsNc5POv970Qlrb5CdWr0ZXR/N+R9JSp1ToF/fjCffbtLPHAN01ZjA4+pmvZnoKtOgeDvw1UMZxqsx4SIPymdRjHtN+RTHCoarPM9L7ieNFhTuYSRcDuPd3YyQi8qJjANSylCBFWBW6v6dRhO+jLdjc/leUbSzUWfv0lzYzeQG75M+P/WXrKVw8lbg0poAsguaud3kRLIFPZde+PJASugYvKqw4SNmaXclCJI4iETcMNSCnz6IjHT7A2zOHg41QR4UmB49MG+V0G/vlmUDT7C43LIxR5vKgKYrUbZm3LASN3muS3JTGwiJ9xsbaqzSpbzSBo9GD24OjK2kRebV0RfwtPFUp8RDs5sya1UCSqYLamTdlTK4vdiC8E6cxrXLIzTq0bmMHf8aSOic95EnNxTf5kpJ3EOUkcL9ukVjbUusrPVCPkNI4rIknj4cAhhOFUWsjFujNAkyoUyQDCn9SlcQs3XLsxUcIvwhlQWDBkVe5+2WvfrE5L3oz0MD9cf+f6g4Qsmd/KRsV2xttnnFIqy/euHmo8m8jloVLAzPnMuPrL/H9qjCy1BRhYvPZoxBMn1GcGdVOazFdxg5+EBwfEASwDHUPf4TNhXqs=
-
-after_success:
-  - export COMMIT=${TRAVIS_COMMIT::7}
-  - docker login -u marciojusto -p S021180#j
-  - docker-compose build
-  - docker push marciojusto/sgi-extranet-app
 
 deploy:
   provider: heroku
   api_key:
     secure: cyzXstGHowp6/UTi9cM9zH+fSS0+JzmBSNlFWYMIh+KGvkq8Cp5OPdDmKkzNAz4H9DVSsiwVOZAn4luW1DwH7rBZCGUGhMOkfgeDCKdec++f53JdDci4NXGALYEeD+e71Jb68xhRUOx0xWCq7g+oBJv70AFExW/LUJLFUpPuVs/xmz8b5A1rMdQcIP3gdp2e13rydT10QZ2ZVugC5k7vSx+uS4xPixfDFMY53WLm6ocmWyowDrnSM0sVFN1YfBQ7tu+WXURKVZoI4AD94lTbRoCc67pi07qwFJ1LjhCIE9VOFjMsRBeQ/a0LEsuDwhLVtO/WK4QxuxaN3jPhU5nR7SstbE1key7HYOtqIoNl3dCiGlwcaUURf6S59/QkA/JyjrV9mUBPT+ccB+41HNwk8WzsTNiykPBGbPHROHoKj5bbKCHhrKtJZnncURHFb1smgXznvP85pL7q2iLP8ANfyOqz0neeePfkDTKI0T41Bu3d+WMmDbdUpYSd47VfODixwvfN9kH5iqJ5yJHauoYJTxlWdK5SrjFwBDFf8VAI6caoGF8kE3ysZzCP5yh5ulVoJ5NFNm9sPT3mnBAh0ux1H8MvKXNHM7xJ7qHUXJUf2R//AcNJxvv7kJOtuhXeQ2hE6Ac8SoQa7smyHWlJHWj9OaHZg1dGf2lw2LklHVJlb2M=
-  app: sgi-extranet-app
-  on:
-    repo: marciojusto/sgi-extranet-app
 
 notifications:
   webhooks: https://outlook.office.com/webhook/fda6319a-169c-47c0-82da-282252ae0fe6@56334c91-7dfb-429e-a42f-d8d72d736139/TravisCI/7931db2c7ac249c5b14dff9813e10338/5aef3a55-a548-44bd-8847-1e840f04a861
