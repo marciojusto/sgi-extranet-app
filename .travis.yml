@@ -13,8 +13,5 @@ services:
 #     secure: IMAGE_NAME
 #     secure: TEAMS_CHANNEL_URL
 
-
-
 notifications:
-
-webhooks: https://outlook.office.com/webhook/fda6319a-169c-47c0-82da-282252ae0fe6@56334c91-7dfb-429e-a42f-d8d72d736139/TravisCI/7931db2c7ac249c5b14dff9813e10338/5aef3a55-a548-44bd-8847-1e840f04a861
+  webhooks: https://outlook.office.com/webhook/fda6319a-169c-47c0-82da-282252ae0fe6@56334c91-7dfb-429e-a42f-d8d72d736139/TravisCI/7931db2c7ac249c5b14dff9813e10338/5aef3a55-a548-44bd-8847-1e840f04a861
