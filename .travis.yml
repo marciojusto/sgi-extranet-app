@@ -6,6 +6,9 @@ deploy:
   provider: heroku
   api_key:
     secure: cyzXstGHowp6/UTi9cM9zH+fSS0+JzmBSNlFWYMIh+KGvkq8Cp5OPdDmKkzNAz4H9DVSsiwVOZAn4luW1DwH7rBZCGUGhMOkfgeDCKdec++f53JdDci4NXGALYEeD+e71Jb68xhRUOx0xWCq7g+oBJv70AFExW/LUJLFUpPuVs/xmz8b5A1rMdQcIP3gdp2e13rydT10QZ2ZVugC5k7vSx+uS4xPixfDFMY53WLm6ocmWyowDrnSM0sVFN1YfBQ7tu+WXURKVZoI4AD94lTbRoCc67pi07qwFJ1LjhCIE9VOFjMsRBeQ/a0LEsuDwhLVtO/WK4QxuxaN3jPhU5nR7SstbE1key7HYOtqIoNl3dCiGlwcaUURf6S59/QkA/JyjrV9mUBPT+ccB+41HNwk8WzsTNiykPBGbPHROHoKj5bbKCHhrKtJZnncURHFb1smgXznvP85pL7q2iLP8ANfyOqz0neeePfkDTKI0T41Bu3d+WMmDbdUpYSd47VfODixwvfN9kH5iqJ5yJHauoYJTxlWdK5SrjFwBDFf8VAI6caoGF8kE3ysZzCP5yh5ulVoJ5NFNm9sPT3mnBAh0ux1H8MvKXNHM7xJ7qHUXJUf2R//AcNJxvv7kJOtuhXeQ2hE6Ac8SoQa7smyHWlJHWj9OaHZg1dGf2lw2LklHVJlb2M=
+  app:
+    master: sgi-extranet-app
+    staging: sgi-extranet-app-staging
 
 notifications:
   webhooks: https://outlook.office.com/webhook/fda6319a-169c-47c0-82da-282252ae0fe6@56334c91-7dfb-429e-a42f-d8d72d736139/TravisCI/7931db2c7ac249c5b14dff9813e10338/5aef3a55-a548-44bd-8847-1e840f04a861
