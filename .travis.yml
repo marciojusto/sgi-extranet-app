@@ -2,7 +2,7 @@ language: java
 jdk:
 - openjdk14
 
-script: mvn test -B -Drun.profiles=dev
+script: mvn spring-boot:run -Drun.profiles=staging
 
 deploy:
   provider: heroku
