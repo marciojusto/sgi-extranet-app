@@ -2,7 +2,10 @@ language: java
 jdk:
 - openjdk14
 
-script: mvn spring-boot:run -Drun.profiles=staging
+#script: mvn spring-boot:run -Drun.profiles=staging
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 deploy:
   provider: heroku
