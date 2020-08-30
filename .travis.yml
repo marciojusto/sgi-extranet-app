@@ -4,6 +4,9 @@ jdk:
 
 #script: mvn spring-boot:run -Drun.profiles=staging
 
+services:
+  - postgresql
+
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 
