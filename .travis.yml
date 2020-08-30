@@ -6,7 +6,8 @@ services:
   - postgresql
 
 before_script:
-  - psql -c 'create database sgiextranet; create user sgiextranet with password 'sgiextranet';' -U sgiextranet -P sgiextranet
+  - psql -c "CREATE DATABASE sgiextranet;" -U postgres
+  - psql -c "CREATE USER sgiextranet WITH PASSWORD 'sgiextranet';" -U postgres
 
 deploy:
   provider: heroku
