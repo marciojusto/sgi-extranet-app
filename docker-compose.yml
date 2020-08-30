@@ -4,8 +4,8 @@ services:
   db:
     image: postgres
     environment:
-      POSTGRES_USER: sgiextranet
-      POSTGRES_PASSWORD: sgiextranet
+      POSTGRES_USER: postgres
+      #POSTGRES_PASSWORD:
     ports:
       - "5432:5432"
     volumes:
