@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgres://fuamcipslbugir:841a022cef6ac3afb6a8babcf0f9fbc0bc4c2ccefe121bdffe1736cf16434f0e@ec2-52-31-94-195.eu-west-1.compute.amazonaws.com:5432/d7to3tasuvl5uf
-    username: fuamcipslbugir
-    password: 841a022cef6ac3afb6a8babcf0f9fbc0bc4c2ccefe121bdffe1736cf16434f0e
+    url: {JDBC_STAGING_DB_URL}
+    username: {JDBC_STAGING_DB_USER}
+    password: {JDBC_STAGING_DB_PASS}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true

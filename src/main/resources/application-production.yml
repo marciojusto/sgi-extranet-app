@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgres://oqsbypusosdobm:b8fe6489d7ea74c331f346fd3cc8a6af47db16f7e5d950bbe1108de28a6317db@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d2ajodobcmf1r7
-    username: oqsbypusosdobm
-    password: b8fe6489d7ea74c331f346fd3cc8a6af47db16f7e5d950bbe1108de28a6317db
+    url: { JDBC_PRODUCTION_DB_URL }
+    username: { JDBC_PRODUCTION_DB_USER }
+    password: { JDBC_PRODUCTION_DB_PASS }
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
