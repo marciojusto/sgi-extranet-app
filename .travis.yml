@@ -2,6 +2,8 @@ language: java
 jdk:
 - openjdk14
 
+script: mvn test -B -Drun.profiles=dev
+
 deploy:
   provider: heroku
   api_key:
