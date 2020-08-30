@@ -3,6 +3,8 @@ server:
 
 spring:
   datasource:
+    initialization-mode: always
+    platform: postgres
     url: jdbc:postgresql://localhost:5432/sgiextranet
     username: sgiextranet
     password: sgiextranet
@@ -11,6 +13,11 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
   flyway:
     clean-disabled: false
     clean-on-validation-error: false

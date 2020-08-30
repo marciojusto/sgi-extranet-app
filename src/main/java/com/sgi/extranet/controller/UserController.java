@@ -17,6 +17,6 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<Iterable<User>> findAll() {
-        return ResponseEntity.of(service.findAll());
+        return ResponseEntity.ok(service.findAll());
     }
 }
