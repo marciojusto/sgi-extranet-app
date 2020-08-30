@@ -2,13 +2,11 @@ language: java
 jdk:
 - openjdk14
 
-#script: mvn spring-boot:run -Drun.profiles=staging
-
 services:
   - postgresql
 
 before_script:
-  - psql -c 'create database sgiextranet;' -U postgres
+  - psql -c 'create database sgiextranet; create user sgiextranet with password 'sgiextranet';' -U sgiextranet -P sgiextranet
 
 deploy:
   provider: heroku
