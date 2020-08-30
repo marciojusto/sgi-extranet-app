@@ -1,9 +1,15 @@
-version: "3"
+version: '3.1'
 
 services:
-  app:
-    build: .
-    image: marciojusto/sgi-extranet-app:latest
-    container_name: sgi-extranet-app
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: sgiextranet
+      POSTGRES_PASSWORD: sgiextranet
     ports:
-    - 8080:8080
+      - "5432:5432"
+    volumes:
+      - db-extranet:/var/lib/postgresql/data
+
+volumes:
+  db-extranet:
