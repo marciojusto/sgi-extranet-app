@@ -5,6 +5,8 @@ import com.sgi.extranet.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -13,5 +15,9 @@ public class UserService {
 
     public Iterable<User> findAll() {
         return repository.findAll();
+    }
+
+    public Optional<User> findById(Long id) {
+        return repository.findById(id);
     }
 }
