@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -Dspring.profiles.active=staging $JAVA_OPTS -jar target/sgi-extranet-app*.jar
+web: java -Dserver.port=$PORT -Dspring.profiles.active=$SPRING_PROFILES_ACTIVE $JAVA_OPTS -jar target/sgi-extranet-app*.jar
