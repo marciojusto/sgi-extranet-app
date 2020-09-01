@@ -6,24 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity
-@Table(name = "user", schema = "public")
-public class User {
+@Table(name = "type", schema = "public")
+public class Type {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private String name;
-    private String lastname;
-    private Integer age;
+    private String description;
 
-    @OneToMany
-    private List<Type> types = new ArrayList<>();
 }
