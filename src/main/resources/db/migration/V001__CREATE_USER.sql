@@ -1,15 +1,12 @@
 create table "user"
 (
-    id bigserial not null,
+    id bigserial primary key,
     name varchar not null,
     lastname varchar not null,
-    age int
+    age int,
+    phone varchar null,
+    mobile_phone varchar not null,
+    email varchar not null,
+    nif bigint not null
 );
-
-create unique index user_id_uindex
-    on "user" (id);
-
-alter table "user"
-    add constraint user_pk
-        primary key (id);
 

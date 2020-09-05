@@ -1,9 +1,9 @@
-create table user_types
+create table user_type
 (
     user_id bigint not null
         constraint fk_user_id
         references "user",
-    types_id int not null
-        constraint fk_types_id
+    type_id int not null
+        constraint fk_type_id
         references type
 );
