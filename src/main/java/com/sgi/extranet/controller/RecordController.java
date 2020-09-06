@@ -1,7 +1,8 @@
 package com.sgi.extranet.controller;
 
 import com.sgi.extranet.exceptions.EntityNotFoundException;
-import com.sgi.extranet.model.User;
+import com.sgi.extranet.model.Record;
+import com.sgi.extranet.service.RecordService;
 import com.sgi.extranet.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,42 +17,44 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
 
+import static com.sgi.extranet.util.GlobalVariables.Entities.RECORD;
 import static com.sgi.extranet.util.GlobalVariables.Entities.USER;
 import static com.sgi.extranet.util.GlobalVariables.ExceptionMessages.ENF;
 
 @Slf4j
 @RestController
-@RequestMapping("users")
+@RequestMapping("records")
 @RequiredArgsConstructor
-public class UserController {
+public class RecordController {
 
     private final MessageSource messageSource;
-    private final UserService service;
+    private final RecordService service;
+    private final UserService userService;
 
     @GetMapping
-    Iterable<User> findAll() {
+    Iterable<Record> findAll() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
-    User findById(@PathVariable Long id) {
+    Record findById(@PathVariable Long id) {
         return service.findById(id)
                       .orElseThrow(() -> new EntityNotFoundException(
                               messageSource.getMessage(ENF, new Object[] {USER, id}, Locale.getDefault())));
     }
 
     @PostMapping
-    User insert(@RequestBody User user) {
-        return service.insertOrUpdate(user);
+    Record insert(@RequestBody Record record) {
+        return service.insertOrUpdate(record);
     }
 
     @PutMapping("/{id}")
-    User update(@PathVariable Long id, @RequestBody User updateUser) {
-        User user = service.findById(id)
-                            .orElseThrow(() -> new EntityNotFoundException(
-                                    messageSource.getMessage(ENF, new Object[]{USER, id}, Locale.getDefault())));
-        updateUser.setId(user.getId());
-        return service.insertOrUpdate(updateUser);
+    Record update(@PathVariable Long id, @RequestBody Record updateRecord) {
+        Record record = service.findById(id)
+                               .orElseThrow(() -> new EntityNotFoundException(
+                                    messageSource.getMessage(ENF, new Object[]{RECORD, id}, Locale.getDefault())));
+        updateRecord.setId(record.getId());
+        return service.insertOrUpdate(updateRecord);
     }
 
 }
